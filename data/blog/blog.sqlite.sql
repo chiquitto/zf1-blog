@@ -5,8 +5,8 @@ CREATE TABLE `admin` (
   `senha` TEXT NOT NULL
 );
 
-INSERT INTO `admin` (idpessoa, nome, email, senha) VALUES (NULL, 'Admin 01', 'admin01@email.com', 'admin01');
-INSERT INTO `admin` (idpessoa, nome, email, senha) VALUES (NULL, 'Admin 02', 'admin02@email.com', 'admin02');
+INSERT INTO `admin` (idadmin, nome, email, senha) VALUES (NULL, 'Admin 01', 'admin01@email.com', 'admin01');
+INSERT INTO `admin` (idadmin, nome, email, senha) VALUES (NULL, 'Admin 02', 'admin02@email.com', 'admin02');
 
 CREATE TABLE `categoria` (
   `idcategoria` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -25,6 +25,6 @@ CREATE TABLE `post` (
   `texto` TEXT NOT NULL
 );
 
-INSERT INTO `post` (idpost, idcategoria, idpessoa, titulo, texto) VALUES (NULL, 1, 1, 'Jogo de Futebol', 'Neste ultimo final de semana, os times jogaram ...');
-INSERT INTO `post` (idpost, idcategoria, idpessoa, titulo, texto) VALUES (NULL, 1, 2, 'Mundial de Voley', 'O Brasil venceu a seleção da Servia e Montenegro');
-INSERT INTO `post` (idpost, idcategoria, idpessoa, titulo, texto) VALUES (NULL, 3, 1, 'Lançamento de Call Of Dutty XXI', 'Nesta semana será lançado o novo jogo da série Call Of Dutty');
+INSERT INTO `post` (idpost, idcategoria, idadmin, titulo, texto) VALUES (NULL, 1, 1, 'Jogo de Futebol', 'Neste ultimo final de semana, os times jogaram ...');
+INSERT INTO `post` (idpost, idcategoria, idadmin, titulo, texto) VALUES (NULL, 1, 2, 'Mundial de Voley', 'O Brasil venceu a seleção da Servia e Montenegro');
+INSERT INTO `post` (idpost, idcategoria, idadmin, titulo, texto) VALUES (NULL, 3, 1, 'Lançamento de Call Of Dutty XXI', 'Nesta semana será lançado o novo jogo da série Call Of Dutty');
