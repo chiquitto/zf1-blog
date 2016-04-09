@@ -11,6 +11,7 @@ DOCUMENT_ROOT="/var/www/zfblog/public"
 apt-get update
 apt-get install -y apache2 git curl php5-cli php5 php5-intl libapache2-mod-php5
 #apt-get install -y mysql-server apache2 libapache2-mod-php5 php5 php5-mysql git curl php5-cli php5 php5-intl
+sudo apt-get install php5-sqlite
 echo "
 <VirtualHost *:80>
     ServerName zfblog
