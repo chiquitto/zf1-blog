@@ -25,6 +25,7 @@ class Application_Form_Admin extends Zend_Form {
             'label' => 'Endereço de email',
             'required' => true,
         ));
+        $email->addValidator(new Zend_Validate_EmailAddress());
         $email->addValidator($this->emailNaoRepetidoVal);
         $this->addElement($email);
         
