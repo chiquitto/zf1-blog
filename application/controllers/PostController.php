@@ -1,6 +1,6 @@
 <?php
 
-class AdmPostController extends Zend_Controller_Action {
+class PostController extends Zend_Controller_Action {
 
     public function indexAction() {
         $posts = Zend_Db_Table::getDefaultAdapter()
