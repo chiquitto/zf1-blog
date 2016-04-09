@@ -1,0 +1,29 @@
+<h1>Administradores</h1>
+
+<?php $this->mensagem(); ?>
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Nome</td>
+      <td>Email</td>
+      <td>Senha</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->admins as $admin) { ?>
+        <tr>
+          <td><?php echo $admin['idadmin']; ?></td>
+          <td><?php echo $admin['nome']; ?></td>
+          <td><?php echo $admin['email']; ?></td>
+          <td><?php echo $admin['senha']; ?></td>
+          <td>
+            [<a href="/admin/update/idadmin/<?php echo $admin['idadmin']; ?>">editar</a>]
+            [<a href="/admin/delete/idadmin/<?php echo $admin['idadmin']; ?>">apagar</a>]
+          </td>
+        </tr>
+    <?php } ?>
+  </tbody>
+</table>
