@@ -1,0 +1,27 @@
+<h1>Posts</h1>
+
+<?php $this->mensagem(); ?>
+
+<table border="1">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Categoria</td>
+      <td>Titulo</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->posts as $post) { ?>
+        <tr>
+          <td><?php echo $post['idpost']; ?></td>
+          <td><?php echo $post['categoria']; ?></td>
+          <td><?php echo $post['titulo']; ?></td>
+          <td>
+            [<a href="/post/update/idpost/<?php echo $post['idpost']; ?>">editar</a>]
+            [<a href="/post/delete/idpost/<?php echo $post['idpost']; ?>">apagar</a>]
+          </td>
+        </tr>
+    <?php } ?>
+  </tbody>
+</table>
