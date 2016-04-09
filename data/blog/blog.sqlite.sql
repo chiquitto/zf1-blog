@@ -2,11 +2,12 @@ CREATE TABLE `admin` (
   `idadmin` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   `nome` TEXT NOT NULL,
   `email` TEXT NOT NULL,
-  `senha` TEXT NOT NULL
+  `senha` TEXT NOT NULL,
+  `papel` INTEGER NOT NULL
 );
 
-INSERT INTO `admin` (idadmin, nome, email, senha) VALUES (NULL, 'Admin 01', 'admin01@email.com', 'admin01');
-INSERT INTO `admin` (idadmin, nome, email, senha) VALUES (NULL, 'Admin 02', 'admin02@email.com', 'admin02');
+INSERT INTO `admin` (idadmin, nome, email, senha, papel) VALUES (NULL, 'Admin 01', 'admin01@email.com', 'admin01', 1);
+INSERT INTO `admin` (idadmin, nome, email, senha, papel) VALUES (NULL, 'Admin 02', 'admin02@email.com', 'admin02', 2);
 
 CREATE TABLE `categoria` (
   `idcategoria` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
