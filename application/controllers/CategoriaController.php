@@ -30,6 +30,22 @@ class CategoriaController extends Zend_Controller_Action {
         $this->view->form = $form;
     }
 
+    public function deleteAction() {
+        $idcategoria = (int) $this->getParam('idcategoria');
+        $model = new Application_Model_Categoria();
+
+        $flashMessenger = $this->_helper->FlashMessenger;
+
+        try {
+            $model->apagar($idcategoria);
+            $flashMessenger->addMessage('Categoria apagada!');
+        } catch (Application_Model_Exception $exc) {
+            $flashMessenger->addMessage($exc->getMessage());
+        }
+
+        $this->_helper->redirector->gotoSimpleAndExit('index');
+    }
+
     public function updateAction() {
         $flashMessenger = $this->_helper->FlashMessenger;
 
@@ -41,7 +57,7 @@ class CategoriaController extends Zend_Controller_Action {
             $flashMessenger->addMessage('Categoria inexistente!');
             $this->_helper->redirector->gotoSimpleAndExit('index');
         }
-        
+
         $form = new Application_Form_Categoria();
         $form->setIdcategoria($idcategoria);
 
