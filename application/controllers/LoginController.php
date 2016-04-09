@@ -35,5 +35,12 @@ class LoginController extends Blog_Controller_Action {
 
         $this->view->form = $form;
     }
+    
+    public function logoutAction() {
+        $auth = Zend_Auth::getInstance();
+        $auth->clearIdentity();
+        
+        $this->_helper->redirector->gotoSimpleAndExit('index', 'index');
+    }
 
 }

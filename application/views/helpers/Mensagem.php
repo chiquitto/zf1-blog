@@ -9,8 +9,8 @@ class Zend_View_Helper_Mensagem extends Zend_View_Helper_Abstract {
         // Sucesso
         if ($flashMessenger->hasMessages()) {
             ?>
-            <ul>
-                <?php foreach ($flashMessenger->getMessages() as $message) { ?>
+            <ul class="msg">
+              <?php foreach ($flashMessenger->getMessages() as $message) { ?>
                   <li><?php echo $message; ?></li>
               <?php } ?>
             </ul>

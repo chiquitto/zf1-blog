@@ -1,0 +1,54 @@
+* {
+    font-family: 'Roboto', Arial, Verdana, sans-serif;
+}
+body, html, li, ul, dl, form {
+    margin: 0;
+    padding: 0;
+}
+dd {
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+li {
+    list-style-position: inside;
+}
+p {
+    text-align: justify;
+}
+input[type=text], input[type=password], select, option {
+    font-size: 16px;
+    width: 200px;
+}
+textarea {
+    font-size: 16px;
+    width: 100%;
+}
+input[type=submit] {
+    font-size: 16px;
+}
+
+#content, #menu {
+    margin: 0 auto;
+    width: 990px;
+}
+
+#menu {
+    margin-top: 15px;
+}
+#menu li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+.msg {
+    background-color: #dfdfdf;
+    margin: 10px 0;
+    padding: 10px;
+}
+#submit-label {
+    display: none;
+}

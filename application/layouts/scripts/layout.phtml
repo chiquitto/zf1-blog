@@ -2,12 +2,31 @@
 <html lang="pt-br">
   <head>
     <title>Blog</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <base href="<?php echo $this->baseUrl(); ?>" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/blog.css" />
   </head>
 
   <body>
-      <?php echo $this->layout()->content ?>
+    <ul id="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="<?php echo $this->url(array('action' => 'categorias', 'controller' => 'index')); ?>">Categorias</a></li>
+      <?php
+      $auth = Zend_Auth::getInstance();
+      if ($auth->hasIdentity()) {
+          ?>
+          <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'post')); ?>">Adm/Post</a></li>
+          <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'categoria')); ?>">Adm/Categorias</a></li>
+          <?php if ($auth->getIdentity()->papel == '2') { ?>
+              <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'usuario')); ?>">Adm/Usuários</a></li>
+          <?php } ?>
+          <li><a href="<?php echo $this->url(array('action' => 'logout', 'controller' => 'login')); ?>">Logout</a></li>
+      <?php } else { ?>
+          <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'login')); ?>">Login</a></li>
+      <?php } ?>
+    </ul>
+    <div id="content"><?php echo $this->layout()->content ?></div>
   </body>
 
 </html>
