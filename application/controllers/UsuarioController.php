@@ -1,6 +1,6 @@
 <?php
 
-class UsuarioController extends Zend_Controller_Action {
+class UsuarioController extends Blog_Controller_Action {
 
     public function indexAction() {
         $tb = new Application_Model_DbTable_Admin();

@@ -1,6 +1,6 @@
 <?php
 
-class LoginController extends Zend_Controller_Action {
+class LoginController extends Blog_Controller_Action {
 
     public function indexAction() {
         $form = new Application_Form_Login();
@@ -25,7 +25,7 @@ class LoginController extends Zend_Controller_Action {
                     $autenticacao = $authDB->getResultRowObject(null, array('senha'));
                     $auth->getStorage()->write($autenticacao);
 
-                    $this->_helper->redirector->gotoSimpleAndExit('index', 'admpost');
+                    $this->_helper->redirector->gotoSimpleAndExit('index', 'post');
                 } else {
                     echo 'Login ou senha incorretos';
                     exit;
