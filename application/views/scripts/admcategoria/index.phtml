@@ -16,8 +16,8 @@
           <td><?php echo $categoria['idcategoria']; ?></td>
           <td><?php echo $categoria['categoria']; ?></td>
           <td>
-            [<a href="/categoria/update/idcategoria/<?php echo $categoria['idcategoria']; ?>">editar</a>]
-            [<a href="/categoria/delete/idcategoria/<?php echo $categoria['idcategoria']; ?>">apagar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'update', 'idcategoria' => $categoria['idcategoria'])); ?>">editar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'delete', 'idcategoria' => $categoria['idcategoria'])); ?>">apagar</a>]
           </td>
         </tr>
     <?php } ?>

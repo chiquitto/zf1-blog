@@ -1,6 +1,6 @@
 <?php
 
-class AdminController extends Zend_Controller_Action {
+class AdmAdminController extends Zend_Controller_Action {
 
     public function indexAction() {
         $tb = new Application_Model_DbTable_Admin();

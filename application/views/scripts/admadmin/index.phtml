@@ -20,8 +20,8 @@
           <td><?php echo $admin['email']; ?></td>
           <td><?php echo $admin['senha']; ?></td>
           <td>
-            [<a href="/admin/update/idadmin/<?php echo $admin['idadmin']; ?>">editar</a>]
-            [<a href="/admin/delete/idadmin/<?php echo $admin['idadmin']; ?>">apagar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'update', 'idadmin' => $admin['idadmin'])); ?>">editar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'delete', 'idadmin' => $admin['idadmin'])); ?>">apagar</a>]
           </td>
         </tr>
     <?php } ?>

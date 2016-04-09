@@ -1,6 +1,6 @@
 <?php
 
-class CategoriaController extends Zend_Controller_Action {
+class AdmCategoriaController extends Zend_Controller_Action {
 
     public function indexAction() {
         $tb = new Application_Model_DbTable_Categoria();

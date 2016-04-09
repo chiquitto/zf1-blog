@@ -18,8 +18,8 @@
           <td><?php echo $post['categoria']; ?></td>
           <td><?php echo $post['titulo']; ?></td>
           <td>
-            [<a href="/post/update/idpost/<?php echo $post['idpost']; ?>">editar</a>]
-            [<a href="/post/delete/idpost/<?php echo $post['idpost']; ?>">apagar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'update', 'idpost' => $post['idpost'])); ?>">editar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'delete', 'idpost' => $post['idpost'])); ?>">apagar</a>]
           </td>
         </tr>
     <?php } ?>
