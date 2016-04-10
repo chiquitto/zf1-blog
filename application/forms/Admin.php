@@ -34,6 +34,16 @@ class Application_Form_Admin extends Zend_Form {
             'required' => true,
         ));
         $this->addElement($senha);
+        
+        $papel = new Zend_Form_Element_Select('papel', array(
+            'label' => 'Papel',
+            'required' => true,
+        ));
+        $papel->setMultiOptions(array(
+            1 => 'Redator',
+            2 => 'Admin'
+        ));
+        $this->addElement($papel);
 
         $submit = new Zend_Form_Element_Submit('submit', array(
             'label' => 'Salvar'

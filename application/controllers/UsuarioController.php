@@ -19,6 +19,7 @@ class UsuarioController extends Blog_Controller_Action {
                 $vo->setNome($form->getValue('nome'));
                 $vo->setEmail($form->getValue('email'));
                 $vo->setSenha($form->getValue('senha'));
+                $vo->setPapel($form->getValue('papel'));
 
                 $model->salvar($vo);
 
@@ -73,6 +74,7 @@ class UsuarioController extends Blog_Controller_Action {
                 $vo->setNome($form->getValue('nome'));
                 $vo->setEmail($form->getValue('email'));
                 $vo->setSenha($form->getValue('senha'));
+                $vo->setPapel($form->getValue('papel'));
 
                 $model->atualizar($vo);
 
@@ -86,6 +88,7 @@ class UsuarioController extends Blog_Controller_Action {
                 'nome' => $adminRow->nome,
                 'email' => $adminRow->email,
                 'senha' => $adminRow->senha,
+                'papel' => $adminRow->papel,
             ));
         }
 

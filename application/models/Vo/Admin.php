@@ -6,6 +6,7 @@ class Application_Model_Vo_Admin {
     private $nome;
     private $email;
     private $senha;
+    private $papel;
 
     function getIdadmin() {
         return $this->idadmin;
@@ -37,6 +38,14 @@ class Application_Model_Vo_Admin {
 
     function setSenha($senha) {
         $this->senha = $senha;
+    }
+    
+    function getPapel() {
+        return $this->papel;
+    }
+
+    function setPapel($papel) {
+        $this->papel = $papel;
     }
 
 }

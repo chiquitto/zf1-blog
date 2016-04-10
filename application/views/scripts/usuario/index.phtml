@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <td>#</td>
+      <td>Papel</td>
       <td>Nome</td>
       <td>Email</td>
       <td>Senha</td>
@@ -18,6 +19,7 @@
       <?php foreach ($this->admins as $admin) { ?>
         <tr>
           <td><?php echo $admin['idadmin']; ?></td>
+          <td><?php if ($admin['papel'] == '2') { ?>Admin<?php } else { ?>Redator<?php } ?></td>
           <td><?php echo $admin['nome']; ?></td>
           <td><?php echo $admin['email']; ?></td>
           <td><?php echo $admin['senha']; ?></td>

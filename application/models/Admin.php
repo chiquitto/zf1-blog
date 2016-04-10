@@ -13,6 +13,7 @@ class Application_Model_Admin {
             'nome' => $admin->getNome(),
             'email' => $admin->getEmail(),
             'senha' => $admin->getSenha(),
+            'papel' => $admin->getPapel(),
                 ), 'idadmin = ' . $admin->getIdadmin());
     }
 
@@ -23,6 +24,7 @@ class Application_Model_Admin {
             'nome' => $admin->getNome(),
             'email' => $admin->getEmail(),
             'senha' => $admin->getSenha(),
+            'papel' => $admin->getPapel(),
         ));
 
         $admin->setIdadmin($tb->getAdapter()->lastInsertId());
