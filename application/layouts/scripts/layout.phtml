@@ -14,17 +14,17 @@
       <li><a href="<?php echo $this->url(array('action' => 'categorias', 'controller' => 'index')); ?>">Categorias</a></li>
       <?php
       $auth = Zend_Auth::getInstance();
-      if ($auth->hasIdentity()) {
+      //if ($auth->hasIdentity()) {
           ?>
           <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'post')); ?>">Adm/Post</a></li>
           <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'categoria')); ?>">Adm/Categorias</a></li>
-          <?php if ($auth->getIdentity()->papel == '2') { ?>
+          <?php //if ($auth->getIdentity()->papel == '2') { ?>
               <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'usuario')); ?>">Adm/Usuários</a></li>
-          <?php } ?>
+          <?php //} ?>
           <li><a href="<?php echo $this->url(array('action' => 'logout', 'controller' => 'login')); ?>">Logout</a></li>
-      <?php } else { ?>
+      <?php //} else { ?>
           <li><a href="<?php echo $this->url(array('action' => 'index', 'controller' => 'login')); ?>">Login</a></li>
-      <?php } ?>
+      <?php //} ?>
     </ul>
     <div id="content"><?php echo $this->layout()->content ?></div>
   </body>
