@@ -39,14 +39,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                 }
             }
         }
-        /*if (isset($config->acl->deny)) {
+        if (isset($config->acl->deny)) {
             foreach ($config->acl->deny as $role => $privilege) {
                 foreach ($privilege as $p) {
                     $privilege = explode('.', $p);
                     $acl->deny($role, $privilege[0], $privilege[1]);
                 }
             }
-        }*/
+        }
         Zend_Registry::set('acl', $acl);
     }
 
