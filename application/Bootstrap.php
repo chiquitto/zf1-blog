@@ -16,6 +16,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $config = new Zend_Config($this->getApplication()->getOptions(), true);
         Zend_Registry::set('config', $config);
     }
+    
+    protected function _initNavigation() {
+        $this->bootstrap('layout');
+        
+        $xml = APPLICATION_PATH . '/configs/navigation.xml';
+        $config = new Zend_Config_Xml($xml, 'nav');
+        $container = new Zend_Navigation($config);
+        
+        $layout = $this->getResource('layout');
+        $view = $layout->getView();
+        $view->navigation($container);
+        
+        Zend_Registry::set('Zend_Navigation', $container);
+    }
 
     protected function _initAcl() {
         $acl = new Zend_Acl;

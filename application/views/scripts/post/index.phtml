@@ -21,7 +21,7 @@
           <td><?php echo $post['titulo']; ?></td>
           <td>
             [<a href="<?php echo $this->url(array('action' => 'update', 'idpost' => $post['idpost'])); ?>">editar</a>]
-            [<a href="<?php echo $this->url(array('action' => 'delete', 'idpost' => $post['idpost'])); ?>">apagar</a>]
+            <?php if ($this->podeApagar) { ?>[<a href="<?php echo $this->url(array('action' => 'delete', 'idpost' => $post['idpost'])); ?>">apagar</a>]<?php } ?>
           </td>
         </tr>
     <?php } ?>

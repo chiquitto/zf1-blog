@@ -15,14 +15,8 @@ class Blog_Controller_Action extends Zend_Controller_Action {
             $resource = $controller;
             $privilege = $action;
 
-            $auth = Zend_Auth::getInstance();
-            //se o usuário fez login usa a role que está na sessão
-            if ($auth->hasIdentity()) {
-                $role = ($auth->getIdentity()->papel == '2') ? 'admin' : 'redator';
-            } else {
-                $role = 'visitante';
-            }
-            
+            $role = $this->getAuthRole();
+
             //faz a verificação da permissão
             $acl = Zend_Registry::get('acl');
             if (!$acl->isAllowed($role, $resource, $privilege)) {
@@ -30,7 +24,36 @@ class Blog_Controller_Action extends Zend_Controller_Action {
                 // $session->erro = 'ACL inválida';
                 // $this->_redirect('/login');
             }
+
+            Zend_Layout::getMvcInstance()
+                    ->getView()
+                    ->navigation()
+                    ->setAcl($acl)
+                    ->setRole($role);
         }
+    }
+
+    /**
+     * 
+     * @return Zend_Acl
+     */
+    protected function getAcl() {
+        return Zend_Registry::get('acl');
+    }
+
+    protected function getAuthRole() {
+        $auth = Zend_Auth::getInstance();
+        //se o usuário fez login usa a role que está na sessão
+        if ($auth->hasIdentity()) {
+            $role = ($auth->getIdentity()->papel == '2') ? 'admin' : 'redator';
+        } else {
+            $role = 'visitante';
+        }
+        return $role;
+    }
+    
+    protected function aclIsAllowed($resource, $privilege) {
+        return $this->getAcl()->isAllowed($this->getAuthRole(), $resource, $privilege);
     }
 
 }

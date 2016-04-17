@@ -27,7 +27,7 @@ input[type=submit] {
     font-size: 16px;
 }
 
-#content, #menu {
+#content, #menu, #breadcrumb {
     margin: 0 auto;
     width: 990px;
 }
@@ -38,6 +38,13 @@ input[type=submit] {
 #menu li {
     display: inline-block;
     margin-right: 15px;
+}
+#menu li ul {
+    display: none;
+}
+
+#breadcrumb {
+    margin-top: 15px;
 }
 
 table {

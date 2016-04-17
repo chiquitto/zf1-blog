@@ -12,6 +12,7 @@ class PostController extends Blog_Controller_Action {
                 ->fetchAll()
         ;
         $this->view->posts = $posts;
+        $this->view->podeApagar = $this->aclIsAllowed('post', 'delete');
     }
 
     public function createAction() {
