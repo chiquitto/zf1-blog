@@ -10,15 +10,15 @@
 
   <body>
     <ul id="menu">
-        <?php echo $this->navigation(); ?>
+        <?php //echo $this->navigation(); ?>
     </ul>
     <ul id="breadcrumb">
       Você esta em: <?php
-      echo $this->navigation()->breadcrumbs()
+      /*echo $this->navigation()->breadcrumbs()
               ->setMinDepth(null) // start at level 0
               ->setMaxDepth(1) // stop at level 1
-              ->setSeparator(' &raquo;' . PHP_EOL)
-      ;
+              ->setSeparator('&raquo;')
+      ;*/
       ?>
     </ul>
     <div id="content"><?php echo $this->layout()->content ?></div>
